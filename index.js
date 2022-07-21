@@ -1,60 +1,58 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-/* This function is a series of questions that will be asked to the user. */
-const questions = () => {
-    const myQuestions = inquirer.prompt([
-        {
-            type: 'input',
-            message: 'What is the name of the current project?',
-            name: 'projectTitle',
-        },
-        {
-            type: 'input',
-            message: 'Please type an easy to read description about your project',
-            name: 'description',
-        },
-        {
-            type: 'input',
-            message: 'What are the steps required to install your project?',
-            name: 'installation'
-        },
-        {
-            type: 'input',
-            message: 'Whats the procedure to report issues?',
-            name: 'issues',
-        },
-        {
-            type: 'input',
-            message: 'How can someone contribute?',
-            name: 'contribution'
-        },
-        {
-            type: "checkbox",
-            message: "Does your current project have a license? ",
-            name: 'licenses',
-            choices: ["Apache", "GNU", "MIT", "BSD", "None"]
-        },
-        {
-            type: "input",
-            message: "Deployed URL:",
-            name: 'Deployed App',
-        },
-        {
-            type: "input",
-            message: "GitHub Username",
-            name: 'GitHubUsername',
-        },
-        {
-            type: 'input',
-            message: 'Please enter your email address here:',
-            name: 'email'
-        },
-    ])
-};
+/* This is an array of questions that will be asked to the user. */
+const questions = [
+    {
+        type: 'input',
+        message: 'What is the name of the current project?',
+        name: 'projectTitle',
+    },
+    {
+        type: 'input',
+        message: 'Please type an easy to read description about your project',
+        name: 'description',
+    },
+    {
+        type: 'input',
+        message: 'What are the steps required to install your project?',
+        name: 'installation'
+    },
+    {
+        type: 'input',
+        message: 'Whats the procedure to report issues?',
+        name: 'issues',
+    },
+    {
+        type: 'input',
+        message: 'How can someone contribute?',
+        name: 'contribution'
+    },
+    {
+        type: "checkbox",
+        message: "Does your current project have a license? ",
+        name: 'licenses',
+        choices: ["Apache", "GNU", "MIT", "BSD", "None"]
+    },
+    {
+        type: "input",
+        message: "Deployed URL:",
+        name: 'Deployed App',
+    },
+    {
+        type: "input",
+        message: "GitHub Username",
+        name: 'GitHubUsername',
+    },
+    {
+        type: 'input',
+        message: 'Please enter your email address here:',
+        name: 'email'
+    },
+];
 
 // TODO: Create a function to write README file
 
@@ -65,7 +63,7 @@ const questions = () => {
  */
 function writeToFile(filename, data) {
     fs.writeFile(filename, data, (error) => error ? console.log(error) : console.log('Success! README File created'));
-} 
+}
 
 
 
