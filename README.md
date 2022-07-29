@@ -1,5 +1,3 @@
-
-  
 # ReadMeGenerator
 ![License](https://img.shields.io/static/v1?label=License&message="None&color=BLUE)
 ## Description

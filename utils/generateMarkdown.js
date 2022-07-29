@@ -9,12 +9,17 @@ function renderLicenseBadge(license) {
   return license.join(" ")
 }
 
+/*
+ * It takes an array of strings and returns a string with each item in the array on a new line and
+ * preceded by an asterisk
+ */
 function renderListObject(licenseObject) {
   licenseObject = licenseObject.map(item => "* " + item)
   return licenseObject.join(" \n")
 }
 
-//Generates a README using info from index.js
+
+/* Taking the data from the user and returning a completed README. */
 function generateMarkdown(data) {
   //changes values 
   const {projectTitle, description, installation, issues, contribution, licenses, deployed, github, email} = data;
