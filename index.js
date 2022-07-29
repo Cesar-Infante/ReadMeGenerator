@@ -40,12 +40,12 @@ const questions = [
     {
         type: "input",
         message: "Deployed URL:",
-        name: 'Deployed App',
+        name: 'deployed',
     },
     {
         type: "input",
         message: "GitHub Username",
-        name: 'GitHubUsername',
+        name: 'github',
     },
     {
         type: 'input',
